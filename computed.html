@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <button v-on:click="counter++">Increment</button>
+        <button v-on:click="counter--">Decrement</button>
+        <p>counter is: {{ counter }}</p>
+
+        <!-- 3 -->
+        <!-- as you can see hear that we use guess as property and not execute it because
+        vue will execute it for us and guess method will call once when page load so
+        it can know about all dependencies as it happen in data properties and then
+        unlike methods where we increase the counted and that guess method was also
+        executed every time it will not be the case in computed properties -->
+        <p>guess is: {{ guess }}</p>
+
+
+        <!-- 4 -->
+        <!-- hear we are using fillName like data property without () and when only 
+        firstName will change then and only then fullName will execute not like methods
+        which execute every time when something change
+        vue is also smart enough that when we load page and firstName is '' as that
+        time we click reset button then changed value of fires name will also be ''
+        so that mins there is no change in data property actually so it won't execute
+        fullName -->
+        <input type="text" v-model='firstName'>
+        <p> Full name: {{ fullName }} </p>
+        <button v-on:click="resetFirstName">reset</button>
+
+        <!-- NOTE: use computed property when you want to calculate or do some
+        logic and want to output data on screen so that it won't re render every time
+        and use methods to bind events in your app we can't use computed for that
+        calculating and processing something and show to screen = computed
+        to listen to events = methods -->
+
+    </div>
+
+</body>
+
+<script src="https://unpkg.com/vue@next"></script>
+<script src="computed.js"></script>
+
+</html>
