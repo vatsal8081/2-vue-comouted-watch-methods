@@ -40,6 +40,35 @@ const app = Vue.createApp({
                 return '';
             }
             return `${this.firstName} patel`
+        },
+
+
+        // 5 
+        // the computed properties are getter and setter base that mins we can use them
+        // not only for getting data but also for setting data as well
+        // by default the computed property will we getter only
+        nameWithAge: {
+            // to create a getter and setter base computed property we have to make {}
+            // instead of (). and that object contains get and set methods
+
+            // get method will call when there will we any change in dependency data of get method
+            // get don't provide ant param to us and also we have to return something from method 
+            get() {
+                console.log('get');
+                if (this.firstName) {
+                    setTimeout(() => this.nameWithAge = 'abc 10', 3000)
+                }
+
+                return `${this.firstName} 20`
+            },
+
+            // set will be call when we change computed property any were in code like in set time out   
+            // we can get changed data in one param of method and we don't need to return anything from hear
+            set(newValue) {
+                console.log('set', newValue);
+                [this.firstName] = newValue.split(' ');
+            }
+
         }
     },
 

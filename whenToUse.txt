@@ -1,0 +1,12 @@
+1) methods = 
+- when you want to bind events
+- when you want to do some heavy tasks
+- can use for data binding (try to always avoid) but keep in mind that if we use it for data binding it will always re render when anything change 
+
+2) computed properties = 
+- when you want to bind data
+- when you want to do some processing on data and also want to show on screen
+
+3) watch = 
+- when you want to listen to data and computed property change and don't want to use that watch in template
+- when you want to make simple and small tasks and mostly not want to change actual data
