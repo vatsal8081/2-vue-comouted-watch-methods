@@ -23,13 +23,14 @@ const app = Vue.createApp({
     // Computed =  if you just want to calculate the property dynamically and want to show in 
     // template then use computed property
     // Watch = if you want to listen to changes on any property and want to execute simple code
-    // then use methods
+    // then use watch
     // Methods = if you want to listen to events or if you want to execute complex logic use methods 
 
 
     data() {
         return {
             counter: 0,
+            test: {number: 0}
         };
     },
 
@@ -41,7 +42,26 @@ const app = Vue.createApp({
             if (newValue > 50) {
                 this.counter = 0
             }
-        }
+        },
+
+        // we can also do this if we want to watch nested property on objects
+        'test.number': {
+            // deep will use mostly in watchicg changis on hole objects or on any nested property in it
+            deep : true,
+            // handler in function which will get exicuted when change will happen
+            handler(newVal, oldVal){
+                console.log('yy', newVal, oldVal);
+            }
+        },
+
+        // as you can see we define watch in object and there is also change happning on number property in test but still this watch will not exicute
+        // because in objects if you want to watch on any property change you have to define deep: true vue desible it default for pufformance resions this 
+        // watch will only execute when hole object will change 
+        test(){
+            console.log('change happen in any property of test');
+        },
+
+        
     }
 
 })

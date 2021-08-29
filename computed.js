@@ -9,7 +9,7 @@ const app = Vue.createApp({
 
     // 1
     // as we discuss in previous repo that when we use methods in template for data bindings  
-    // because vue don't know there dependance it will re render then every time something changes
+    // because vue don't know there dependance it will re render them every time something changes
     // so to avoid that we can use computed properties. 
     // computed properties are same as methods only difference is when we use computed
     // properties for data bindings vue will know all dependance used in computed methods
@@ -46,12 +46,12 @@ const app = Vue.createApp({
         // 5 
         // the computed properties are getter and setter base that mins we can use them
         // not only for getting data but also for setting data as well
-        // by default the computed property will we getter only
+        // by default the computed property will be getter only
         nameWithAge: {
             // to create a getter and setter base computed property we have to make {}
             // instead of (). and that object contains get and set methods
 
-            // get method will call when there will we any change in dependency data of get method
+            // get method will call when there will be any change in dependency data of get method
             // get don't provide ant param to us and also we have to return something from method 
             get() {
                 console.log('get');
