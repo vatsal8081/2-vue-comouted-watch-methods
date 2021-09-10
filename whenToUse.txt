@@ -5,7 +5,7 @@
 
 2) computed properties = 
 - when you want to bind data
-- when you want to do some processing on data and also want to show on screen
+- when you want to do some processing on data and don't want to change actual data just want to return processed value and also want to show on screen
 
 3) watch = 
 - when you want to listen to data and computed property change and don't want to use that watch in template
